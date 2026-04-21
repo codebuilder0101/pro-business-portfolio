@@ -141,13 +141,13 @@ Fique à vontade para nos enviar uma mensagem estaremos esperando por você por 
           <div className="why-grid">
             <div className="why-content" data-aos="fade-right">
               <span className="section-tag">Por que nos escolher</span>
-              <h2 className="section-title">Diferenciais do nosso <span className="text-gold">Escritório</span></h2>
+              <h2 className="section-title">A expertise de quem já esteve do outro lado da mesa</h2>
               <div className="why-items">
                 {[
-                  { icon: 'fas fa-bullseye', title: 'Foco em Resultados', desc: 'Nossa atuação é orientada para resultados concretos, com estratégias personalizadas para cada cliente e situação.' },
-                  { icon: 'fas fa-clock', title: 'Agilidade e Prazos', desc: 'Garantimos respostas rápidas e cumprimento rigoroso de todos os prazos legais e acordados.' },
-                  { icon: 'fas fa-graduation-cap', title: 'Conhecimento Técnico', desc: 'Equipe constantemente atualizada com as mudanças legislativas e jurisprudência dos tribunais.' },
-                  { icon: 'fas fa-map-marker-alt', title: 'Atuação Nacional', desc: 'Atendemos clientes de todo o Brasil, com suporte remoto eficiente e presencial quando necessário.' },
+                  { icon: 'fas fa-bullseye', title: 'Estratégia de Pregoeiro (Foco em Resultados)', desc: 'Diferente de assessorias comuns, nossa estratégia é moldada por 12 anos de experiência na condução de certames públicos. Não entregamos apenas documentos; entregamos a inteligência necessária para vencer disputas, antecipando movimentos de concorrentes e decisões dos órgãos.' },
+                  { icon: 'fas fa-clock', title: 'Agilidade e Rigor com Prazos', desc: 'Em licitações, um minuto decide um contrato. Garantimos o monitoramento ininterrupto de chats e publicações, com uma estrutura pronta para respostas imediatas. Nossa agilidade é o que garante que sua empresa nunca perca um lance de desempate ou um prazo recursal.' },
+                  { icon: 'fas fa-graduation-cap', title: 'Autoridade Técnica Especializada', desc: 'Nossa equipe não apenas segue a lei; nós a dominamos. Estamos em constante atualização com a Lei de Licitações e com a jurisprudência mais recente do TCU e TCEs. Oferecemos um suporte técnico jurídico que entende o seu nicho de mercado.' },
+                  { icon: 'fas fa-map-marker-alt', title: 'Atuação em Todo o Território Nacional', desc: 'Operamos com excelência em todos os portais de compras do Brasil (ComprasGov, licitacoes-e, BLL e outros). Oferecemos suporte remoto de alta tecnologia para empresas de qualquer estado, garantindo que a distância nunca seja um obstáculo para a vitória no certame.' },
                 ].map((item, i) => (
                   <div className="why-item" key={i}>
                     <div className="why-icon"><i className={item.icon}></i></div>
