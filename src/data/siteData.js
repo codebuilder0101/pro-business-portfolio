@@ -1,9 +1,9 @@
 const siteData = {
   firmName: 'Elcio Brack',
   specialization: 'Licitações',
-  whatsappNumber: '5511111111111',
-  email: 'talentdeveloper@gmail.com',
-  phone: '5511111111111',
+  whatsappNumber: '(54) 996134928',
+  email: 'ebrackassessoria@gmail.com',
+  phone: '(54) 996134928',
   address: 'Website',
   cityState: 'Website',
   oabNumber: 'Website',
@@ -14,7 +14,7 @@ const siteData = {
   colorScheme: 'dark-gold',
   includeBlog: true,
   whatsappLink: (msg = 'Olá! Gostaria de mais informações sobre os serviços jurídicos.') =>
-    `https://wa.me/5511111111111?text=${encodeURIComponent(msg)}`,
+    `https://wa.me/(54) 996134928?text=${encodeURIComponent(msg)}`,
   services: [
     {
       icon: 'fas fa-file-contract',
