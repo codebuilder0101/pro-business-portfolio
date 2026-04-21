@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import siteData from '../data/siteData';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo-light.png';
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-col">
             <div className="footer-logo">
-              <div className="logo-icon" style={{ background: 'transparent', padding: 0, width: 'auto', height: '48px', minWidth: '48px', borderRadius: '8px', overflow: 'hidden' }}>
+              <div className="logo-icon" style={{ background: 'transparent', padding: 0, width: 'auto', height: '56px', minWidth: '48px', borderRadius: 0, overflow: 'visible' }}>
                 <img src={logo} alt={siteData.firmName} style={{ height: '100%', width: 'auto', objectFit: 'contain', display: 'block' }} />
               </div>
               <div className="logo-text">
