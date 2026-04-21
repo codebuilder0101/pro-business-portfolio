@@ -33,7 +33,7 @@ export default function Servicos() {
                   ))}
                 </ul>
                 <a href={siteData.whatsappLink(`Olá! Gostaria de saber mais sobre ${service.title}.`)} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-whatsapp"></i> Consultar
+                  <i className="fab fa-whatsapp"></i> Quero uma análise do meu caso agora.
                 </a>
               </div>
             </div>
