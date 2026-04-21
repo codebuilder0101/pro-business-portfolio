@@ -104,7 +104,7 @@ export default function Home() {
                 <div className="about-feature"><i className="fas fa-check-circle"></i><span>Atuação em todo o Brasil</span></div>
                 <div className="about-feature"><i className="fas fa-check-circle"></i><span>Resultados comprovados</span></div>
               </div>
-              <Link to="/sobre" className="btn btn-primary">Conheça o Escritório <i className="fas fa-arrow-right"></i></Link>
+              <Link to="/sobre" className="btn btn-primary">Sobre Nós <i className="fas fa-arrow-right"></i></Link>
             </div>
           </div>
         </div>

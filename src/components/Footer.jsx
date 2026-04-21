@@ -30,7 +30,7 @@ export default function Footer() {
             <h4>Links Rápidos</h4>
             <ul>
               <li><Link to="/">Início</Link></li>
-              <li><Link to="/sobre">O Escritório</Link></li>
+              <li><Link to="/sobre">Sobre Nós</Link></li>
               <li><Link to="/servicos">Serviços</Link></li>
               {siteData.includeBlog && <li><Link to="/mercado">Mercado</Link></li>}
               <li><Link to="/contato">Contato</Link></li>

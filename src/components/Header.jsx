@@ -11,7 +11,7 @@ export default function Header() {
 
   const navLinks = [
     { to: '/', label: 'Início' },
-    { to: '/sobre', label: 'O Escritório' },
+    { to: '/sobre', label: 'Sobre Nós' },
     { to: '/servicos', label: 'Serviços' },
     ...(siteData.includeBlog ? [{ to: '/mercado', label: 'Mercado' }] : []),
     { to: '/contato', label: 'Contato' },

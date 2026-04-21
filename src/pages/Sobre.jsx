@@ -14,7 +14,7 @@ export default function Sobre() {
         title="O"
         titleGold="Escritório"
         description="Conheça nossa história, missão e os valores que nos tornam referência."
-        breadcrumb="O Escritório"
+        breadcrumb="Sobre Nós"
       />
       <section className="about-full">
         <div className="container">
