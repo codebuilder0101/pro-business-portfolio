@@ -1,6 +1,6 @@
 const siteData = {
-  firmName: 'Website',
-  specialization: 'Website',
+  firmName: 'Elcio Brack',
+  specialization: 'Licitações',
   whatsappNumber: '5511111111111',
   email: 'talentdeveloper@gmail.com',
   phone: '5511111111111',
@@ -10,7 +10,7 @@ const siteData = {
   yearsExperience: 10,
   processesHandled: 500,
   successRate: 95,
-  tagline: 'Advocacia de Excelência',
+  tagline: 'O Maior Comprador do Brasil',
   colorScheme: 'dark-gold',
   includeBlog: true,
   whatsappLink: (msg = 'Olá! Gostaria de mais informações sobre os serviços jurídicos.') =>

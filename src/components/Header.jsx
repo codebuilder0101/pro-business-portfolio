@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useScrollHeader } from '../hooks/useScrollEffects';
 import siteData from '../data/siteData';
+import logo from '../assets/logo.png';
 
 export default function Header() {
   const { isScrolled } = useScrollHeader();
@@ -12,7 +13,7 @@ export default function Header() {
     { to: '/', label: 'Início' },
     { to: '/sobre', label: 'O Escritório' },
     { to: '/servicos', label: 'Serviços' },
-    ...(siteData.includeBlog ? [{ to: '/blog', label: 'Blog' }] : []),
+    ...(siteData.includeBlog ? [{ to: '/mercado', label: 'Mercado' }] : []),
     { to: '/contato', label: 'Contato' },
   ];
 
@@ -20,10 +21,12 @@ export default function Header() {
     <header className={`header${isScrolled ? ' scrolled' : ''}`} id="header">
       <div className="container header-inner">
         <Link to="/" className="logo">
-          <div className="logo-icon"><i className="fas fa-balance-scale"></i></div>
+          <div className="logo-icon" style={{ background: 'transparent', padding: 0, width: 'auto', height: '48px', minWidth: '48px', borderRadius: '8px', overflow: 'hidden' }}>
+            <img src={logo} alt={siteData.firmName} style={{ height: '100%', width: 'auto', objectFit: 'contain', display: 'block' }} />
+          </div>
           <div className="logo-text">
             <span className="logo-name">{siteData.firmName}</span>
-            <span className="logo-tagline">Advocacia</span>
+            <span className="logo-tagline">Licitações</span>
           </div>
         </Link>
         <nav className={`nav${menuOpen ? ' active' : ''}`} id="nav">

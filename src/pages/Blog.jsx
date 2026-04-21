@@ -4,6 +4,7 @@ import siteData from '../data/siteData';
 import PageHero from '../components/PageHero';
 import CTASection from '../components/CTASection';
 import { useAosObserver } from '../hooks/useScrollEffects';
+import blogCardImg from '../assets/logo.png';
 
 export default function Blog() {
   const aosRef = useAosObserver();
@@ -12,10 +13,10 @@ export default function Blog() {
   return (
     <div ref={aosRef}>
       <PageHero
-        title="Blog"
-        titleGold="Jurídico"
-        description="Artigos, análises e novidades sobre o mundo jurídico."
-        breadcrumb="Blog"
+        title="Notícias do"
+        titleGold="Mercado"
+        description="Artigos, análises e novidades sobre o mercado de licitações."
+        breadcrumb="Mercado"
       />
       <section className="blog-page">
         <div className="container">
@@ -24,7 +25,7 @@ export default function Blog() {
               {siteData.blogPosts.map((post, i) => (
                 <article className="blog-post-card" data-aos="fade-up" data-aos-delay={i * 50} key={post.id}>
                   <div className="blog-card-image">
-                    <div className="blog-img-placeholder"><i className={post.icon}></i></div>
+                    <img src={blogCardImg} alt={post.title} style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }} />
                     <span className="blog-category">{post.category}</span>
                   </div>
                   <div className="blog-card-content">

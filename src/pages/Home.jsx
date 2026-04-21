@@ -4,7 +4,9 @@ import siteData from '../data/siteData';
 import { useAosObserver, useCounterAnimation } from '../hooks/useScrollEffects';
 import CTASection from '../components/CTASection';
 import heroBg from '../assets/hero-bg.jpg';
-import aboutPhoto from '../assets/legal-bids-hero.jpg';
+import aboutPhoto from '../assets/photo.png';
+import portraitImg from '../assets/photo2.png';
+import blogCardImg from '../assets/logo.png';
 
 function StatCounter({ target, suffix, label }) {
   const { count, ref } = useCounterAnimation(target);
@@ -49,18 +51,18 @@ export default function Home() {
         <div className="hero-particles" ref={particlesRef}></div>
         <div className="container hero-content">
           <div className="hero-badge" data-aos="fade-down">
-            <i className="fas fa-shield-alt"></i> Especialistas em {siteData.specialization}
+            <i className="fas fa-shield-alt"></i> {siteData.tagline}
           </div>
-          <h1 data-aos="fade-up">{siteData.firmName}<br /><span className="text-gold">{siteData.tagline}</span></h1>
+          <h1 data-aos="fade-up">Transforme o Governo no<br /><span className="text-gold">Maior Cliente da Sua Empresa</span></h1>
           <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
-            Soluções jurídicas estratégicas e personalizadas. Experiência, dedicação e resultados comprovados para você.
+            Aumente seu faturamento com segurança, previsibilidade e garantia de pagamento.
           </p>
           <div className="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-            <a href={siteData.whatsappLink('Olá! Gostaria de agendar uma consulta.')} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-whatsapp"></i> Agende uma Consulta
+            <a href={siteData.whatsappLink('Olá! Quero vender para o Governo.')} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-whatsapp"></i> Quero vender para o Governo
             </a>
-            <Link to="/servicos" className="btn btn-outline">
-              Nossos Serviços <i className="fas fa-arrow-right"></i>
+            <Link to="/mercado" className="btn btn-outline">
+              Conheça o Mercado <i className="fas fa-arrow-right"></i>
             </Link>
           </div>
           <div className="hero-stats" data-aos="fade-up" data-aos-delay="300">
@@ -84,7 +86,7 @@ export default function Home() {
           <div className="about-grid">
             <div className="about-image" data-aos="fade-right">
               <div className="about-img-wrapper">
-                <img src={aboutPhoto} alt="Advogado em seu escritório" className="about-img" />
+                <img src={aboutPhoto} alt={siteData.firmName} className="about-img" />
                 <div className="about-experience-badge">
                   <span className="exp-number">{siteData.yearsExperience}+</span>
                   <span className="exp-text">Anos de<br />Experiência</span>
@@ -154,7 +156,7 @@ export default function Home() {
               </div>
             </div>
             <div className="why-image" data-aos="fade-left">
-              <div className="why-img-placeholder"><i className="fas fa-university"></i></div>
+              <img src={portraitImg} alt="Elcio Brack" style={{ width: '100%', aspectRatio: '4/5', objectFit: 'cover', borderRadius: 'var(--radius-lg)', display: 'block' }} />
             </div>
           </div>
         </div>
@@ -165,15 +167,15 @@ export default function Home() {
         <section className="section blog-preview-section">
           <div className="container">
             <div className="section-header" data-aos="fade-up">
-              <span className="section-tag">Blog & Notícias</span>
-              <h2 className="section-title">Artigos <span className="text-gold">Jurídicos</span></h2>
-              <p className="section-desc">Fique atualizado sobre as principais novidades, mudanças legislativas e análises jurídicas relevantes.</p>
+              <span className="section-tag">Mercado</span>
+              <h2 className="section-title">Notícias do <span className="text-gold">Mercado</span></h2>
+              <p className="section-desc">Fique atualizado sobre as principais novidades, oportunidades e análises do mercado de licitações.</p>
             </div>
             <div className="blog-grid">
               {siteData.blogPosts.slice(0, 3).map((post, i) => (
                 <article className="blog-card" data-aos="fade-up" data-aos-delay={i * 100} key={post.id}>
                   <div className="blog-card-image">
-                    <div className="blog-img-placeholder"><i className={post.icon}></i></div>
+                    <img src={blogCardImg} alt={post.title} style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }} />
                     <span className="blog-category">{post.category}</span>
                   </div>
                   <div className="blog-card-content">
@@ -181,15 +183,15 @@ export default function Home() {
                       <span><i className="far fa-calendar-alt"></i> {post.date}</span>
                       <span><i className="far fa-clock"></i> {post.readTime}</span>
                     </div>
-                    <h3><Link to="/blog">{post.title}</Link></h3>
+                    <h3><Link to="/mercado">{post.title}</Link></h3>
                     <p>{post.summary}</p>
-                    <Link to="/blog" className="read-more">Ler Artigo <i className="fas fa-arrow-right"></i></Link>
+                    <Link to="/mercado" className="read-more">Ler Artigo <i className="fas fa-arrow-right"></i></Link>
                   </div>
                 </article>
               ))}
             </div>
             <div className="blog-cta" data-aos="fade-up">
-              <Link to="/blog" className="btn btn-outline">Ver Todos os Artigos <i className="fas fa-arrow-right"></i></Link>
+              <Link to="/mercado" className="btn btn-outline">Ver Todas as Notícias <i className="fas fa-arrow-right"></i></Link>
             </div>
           </div>
         </section>

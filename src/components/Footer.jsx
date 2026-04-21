@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import siteData from '../data/siteData';
+import logo from '../assets/logo.png';
 
 export default function Footer() {
   return (
@@ -8,14 +9,16 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-col">
             <div className="footer-logo">
-              <div className="logo-icon"><i className="fas fa-balance-scale"></i></div>
+              <div className="logo-icon" style={{ background: 'transparent', padding: 0, width: 'auto', height: '48px', minWidth: '48px', borderRadius: '8px', overflow: 'hidden' }}>
+                <img src={logo} alt={siteData.firmName} style={{ height: '100%', width: 'auto', objectFit: 'contain', display: 'block' }} />
+              </div>
               <div className="logo-text">
                 <span className="logo-name">{siteData.firmName}</span>
-                <span className="logo-tagline">Advocacia</span>
+                <span className="logo-tagline">Licitações</span>
               </div>
             </div>
             <p className="footer-desc">
-              Assessoria jurídica especializada em {siteData.specialization}. Atuação estratégica para garantir a segurança jurídica dos nossos clientes.
+              Consultoria especializada em {siteData.specialization}. Transforme o Governo no maior cliente da sua empresa com segurança, previsibilidade e garantia de pagamento.
             </p>
             <div className="footer-social">
               <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
@@ -29,7 +32,7 @@ export default function Footer() {
               <li><Link to="/">Início</Link></li>
               <li><Link to="/sobre">O Escritório</Link></li>
               <li><Link to="/servicos">Serviços</Link></li>
-              {siteData.includeBlog && <li><Link to="/blog">Blog</Link></li>}
+              {siteData.includeBlog && <li><Link to="/mercado">Mercado</Link></li>}
               <li><Link to="/contato">Contato</Link></li>
             </ul>
           </div>
