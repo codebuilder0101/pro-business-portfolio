@@ -100,13 +100,13 @@ Fique à vontade para nos enviar uma mensagem estaremos esperando por você por 
             <div className="about-text" data-aos="fade-left">
               <span className="section-tag">Sobre Nós</span>
               <h2 className="section-title">Referência em <span className="text-gold">{siteData.specialization}</span></h2>
-              <p>Somos um escritório especializado em {siteData.specialization}. Nossa equipe possui ampla experiência e conhecimento técnico, oferecendo suporte completo e personalizado para cada cliente.</p>
-              <p>Atuamos de forma estratégica e preventiva, garantindo que nossos clientes estejam sempre em conformidade com a legislação vigente e alcancem os melhores resultados.</p>
+              <p>Sua empresa merece a segurança de quem conhece cada engrenagem da administração pública. Após 12 anos de atuação na linha de frente como Pregoeiro, decidi inverter a mesa: agora, uso esse know-how exclusivo para defender os interesses da sua empresa.</p>
+              <p>Entendemos as armadilhas dos editais e as brechas dos concorrentes como ninguém. Nossa equipe oferece um suporte técnico de alta performance, transformando a burocracia das licitações em uma jornada estratégica e vencedora para o seu negócio.</p>
               <div className="about-features">
-                <div className="about-feature"><i className="fas fa-check-circle"></i><span>Atendimento personalizado</span></div>
-                <div className="about-feature"><i className="fas fa-check-circle"></i><span>Equipe especializada</span></div>
-                <div className="about-feature"><i className="fas fa-check-circle"></i><span>Atuação em todo o Brasil</span></div>
-                <div className="about-feature"><i className="fas fa-check-circle"></i><span>Resultados comprovados</span></div>
+                <div className="about-feature"><i className="fas fa-check-circle"></i><span>Inteligência em Editais</span></div>
+                <div className="about-feature"><i className="fas fa-check-circle"></i><span>Presença Nacional</span></div>
+                <div className="about-feature"><i className="fas fa-check-circle"></i><span>Estratégia Anti-Recurso</span></div>
+                <div className="about-feature"><i className="fas fa-check-circle"></i><span>Foco no Contrato</span></div>
               </div>
               <Link to="/sobre" className="btn btn-primary">Sobre Nós <i className="fas fa-arrow-right"></i></Link>
             </div>
