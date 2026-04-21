@@ -53,11 +53,11 @@ export default function Home() {
           <div className="hero-badge" data-aos="fade-down">
             <i className="fas fa-shield-alt"></i> {siteData.tagline}
           </div>
-          <h1>Este é o nosso WhatsApp comercial.<br/>
+          {/* <h1>Este é o nosso WhatsApp comercial.<br/>
 +1 (262) 620-5233<br/>
 Para sua comodidade, usamos o WhatsApp como principal canal de atendimento.<br/>
-Fique à vontade para nos enviar uma mensagem estaremos esperando por você por lá.</h1>
-          {/* <h1 data-aos="fade-up">Transforme o Governo no<br /><span className="text-gold">Maior Cliente da Sua Empresa</span></h1> */}
+Fique à vontade para nos enviar uma mensagem estaremos esperando por você por lá.</h1> */}
+          <h1 data-aos="fade-up">Transforme o Governo no<br /><span className="text-gold">Maior Cliente da Sua Empresa</span></h1>
           <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
             Aumente seu faturamento com segurança, previsibilidade e garantia de pagamento.
           </p>

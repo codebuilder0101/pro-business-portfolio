@@ -11,8 +11,8 @@ export default function Sobre() {
   return (
     <div ref={aosRef}>
       <PageHero
-        title="O"
-        titleGold="Escritório"
+        title=""
+        titleGold="Sobre Nós"
         description="Conheça nossa história, missão e os valores que nos tornam referência."
         breadcrumb="Sobre Nós"
       />
@@ -29,9 +29,9 @@ export default function Sobre() {
             <div className="about-full-text" data-aos="fade-left">
               <span className="section-tag">Nossa História</span>
               <h2>Tradição e <span className="text-gold">Inovação</span></h2>
-              <p>Fundado com o propósito de oferecer assessoria jurídica de excelência, nosso escritório se consolidou como referência no mercado ao longo de {siteData.yearsExperience} anos de atuação.</p>
-              <p>Nossa equipe é formada por profissionais altamente qualificados, com formação especializada e dedicação total aos interesses dos nossos clientes, garantindo a segurança jurídica necessária em todas as áreas de atuação.</p>
-              <p>Com mais de {siteData.processesHandled} processos atendidos e uma taxa de sucesso de {siteData.successRate}%, demonstramos nosso compromisso com resultados concretos e a satisfação dos nossos clientes.</p>
+              <p>Sua empresa merece a segurança de quem conhece cada engrenagem da administração pública. Após 12 anos de atuação na linha de frente como Pregoeiro, decidi inverter a mesa: agora, uso esse know-how exclusivo para defender os interesses da sua empresa.</p>
+              <p>Entendemos as armadilhas dos editais e as brechas dos concorrentes como ninguém. Nossa equipe oferece um suporte técnico de alta performance, transformando a burocracia das licitações em uma jornada estratégica e vencedora para o seu negócio.</p>
+              {/* <p>Com mais de {siteData.processesHandled} processos atendidos e uma taxa de sucesso de {siteData.successRate}%, demonstramos nosso compromisso com resultados concretos e a satisfação dos nossos clientes.</p> */}
             </div>
           </div>
         </div>
