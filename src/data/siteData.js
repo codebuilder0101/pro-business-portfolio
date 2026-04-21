@@ -18,50 +18,53 @@ const siteData = {
   services: [
     {
       icon: 'fas fa-file-contract',
-      title: 'Consultoria Jurídica',
-      shortDesc: 'Assessoria jurídica completa e personalizada, com análise detalhada de casos e orientação estratégica para tomada de decisões.',
-      fullDesc: 'Oferecemos consultoria jurídica abrangente, analisando cada caso de forma minuciosa para identificar as melhores estratégias e soluções legais. Nossa equipe está preparada para atender demandas complexas com agilidade e precisão.',
+      title: '1. Consultoria Estratégica em Licitações',
+      shortDesc: 'A solução completa, do planejamento à assinatura do contrato. Oferecemos suporte integral em todas as etapas do processo licitatório. Com a autoridade de quem foi Pregoeiro por 12 anos, nossa atuação cobre 100% das necessidades da empresa: desde a busca e análise de editais, montagem da documentação e elaboração da proposta, até a participação ativa na sala de lances e condução de recursos.',
+      fullDesc: 'A gestão completa do seu processo licitatório, do edital à assinatura do contrato. Muitas empresas perdem oportunidades por não terem tempo ou equipe qualificada para gerir a burocracia dos certames. Nossa assessoria "full service" elimina esse gargalo. Com a expertise de quem presidiu certames por 12 anos, cuidamos de cada detalhe :',
       features: [
-        'Análise detalhada de documentos e contratos',
-        'Pareceres jurídicos fundamentados',
-        'Orientação estratégica personalizada',
-        'Acompanhamento processual completo'
+        'Busca e Triagem: Identificamos as melhores oportunidades para o seu nicho de mercado.',
+        'Análise de Viabilidade: Estudo técnico do edital para garantir que sua empresa atenda a todos os requisitos.',
+        'Montagem de Propostas: Elaboração de planilhas de custos, exequibilidade e organização documental.',
+        'Participação na Disputa: Atuação direta na sala de lances, com estratégia de desempate e monitoramento em tempo real.',
+        'Assinatura do Contrato: Suporte na fase de homologação e adjudicação, garantindo que o direito conquistado seja formalizado.'
       ]
     },
     {
       icon: 'fas fa-gavel',
-      title: 'Assessoria Jurídica Preventiva',
-      shortDesc: 'Atuação preventiva para evitar litígios, com análise de riscos e implementação de medidas de conformidade e segurança jurídica.',
-      fullDesc: 'Prevenção é a melhor estratégia. Identificamos riscos jurídicos antes que se tornem problemas, implementando políticas e procedimentos que garantem a conformidade e segurança da sua empresa.',
+      title: '2. Blindagem e Conformidade Preventiva',
+      shortDesc: 'Segurança total para sua empresa vencer e manter o contrato. Atuamos na fase interna da licitação, auxiliando na montagem do acervo documental e técnico. O objetivo é garantir que sua empresa esteja 100% em conformidade com a Nova Lei de Licitações (14.133), evitando desclassificações por detalhes burocráticos.',
+      fullDesc: 'Reduza riscos e evite desclassificações por detalhes técnicos. A Nova Lei de Licitações (14.133) exige um rigor documental e técnico sem precedentes. Nossa atuação preventiva blinda sua empresa contra erros fatais que afastam bons licitantes da disputa : ',
       features: [
-        'Mapeamento de riscos jurídicos',
-        'Programas de compliance',
-        'Treinamentos para equipes',
-        'Auditorias jurídicas preventivas'
+        'Auditoria Documental: Revisão completa do acervo da empresa (certidões, balanços e atestados).',
+        'Conformidade com a Lei 14.133: Adequação imediata dos processos internos às novas exigências legais.',
+        'Treinamento Estratégico: Orientação para sua equipe comercial sobre como se comportar e o que evitar durante o processo de habilitação.',
+        'Impugnação de Editais: Correção de exigências ilegais ou abusivas que possam prejudicar sua participação.'
       ]
     },
     {
       icon: 'fas fa-handshake',
-      title: 'Contratos e Acordos',
-      shortDesc: 'Elaboração, análise e revisão de contratos, garantindo segurança jurídica e proteção dos interesses dos nossos clientes.',
-      fullDesc: 'Nossos especialistas elaboram, revisam e negociam contratos de todos os tipos, garantindo que cada cláusula proteja seus interesses e esteja em conformidade com a legislação vigente.',
+      title: '3. Gestão de Contratos e Reequilíbrio',
+      shortDesc: 'Proteção do seu lucro e do seu capital de giro. Contratos públicos são vivos. Atuamos na elaboração de pedidos de realinhamento de preços, reajustes e prorrogações. Além disso, garantimos que sua empresa não seja prejudicada por inadimplência ou má gestão do órgão público.',
+      fullDesc: 'Garanta a saúde financeira e a rentabilidade do seu contrato público. Vencer a licitação é apenas o começo. O desafio real é manter a rentabilidade ao longo do tempo. Atuamos para que sua empresa não seja sufocada pela inflação ou por atrasos do órgão público : ',
       features: [
-        'Elaboração de contratos sob medida',
-        'Revisão e análise de cláusulas',
-        'Negociação contratual',
-        'Gestão de contratos vigentes'
+        'Reequilíbrio Econômico-Financeiro: Elaboração de pedidos de realinhamento e reajuste de preços fundamentados.',
+        'Aditivos e Prorrogações: Gestão de prazos e termos aditivos para expansão ou continuidade do serviço.',
+        'Combate à Inadimplência: Atuação técnica e jurídica para garantir o recebimento de faturas e o cumprimento da ordem cronológica de pagamentos.',
+        'Defesa em Sanções: Proteção contra multas indevidas, advertências ou processos de suspensão por falhas na execução.',
+        'Suspensão de Serviço: Orientação segura sobre o direito de parar o serviço em caso de falta de pagamento, conforme a lei.'
       ]
     },
     {
       icon: 'fas fa-balance-scale',
-      title: 'Contencioso Judicial',
-      shortDesc: 'Representação em processos judiciais de todas as instâncias, com atuação estratégica e foco em resultados positivos.',
-      fullDesc: 'Atuamos em todas as instâncias do Poder Judiciário, defendendo seus direitos com estratégia, experiência e dedicação. Nossa equipe possui amplo conhecimento processual para garantir os melhores resultados.',
+      title: '4. Contencioso e Defesa Administrativa',
+      shortDesc: 'Combate rigoroso a irregularidades e concorrência desleal. Representação técnica em recursos, contrarrazões e impugnações. Utilizamos o conhecimento dos bastidores para derrubar propostas irregulares de concorrentes e defender a sua habilitação com teses jurídicas sólidas e atualizadas. Atuação estratégica em todas as instâncias e junto aos Tribunais de Contas.',
+      fullDesc: 'Combate rigoroso a irregularidades e defesa intransigente do seu direito. Onde outros enxergam uma derrota, nós enxergamos uma tese jurídica. Utilizamos o conhecimento dos "bastidores" para garantir que a melhor proposta vença, combatendo qualquer desvio de conduta : ',
       features: [
-        'Representação em todas as instâncias',
-        'Elaboração de petições e recursos',
-        'Acompanhamento processual em tempo real',
-        'Mediação e arbitragem'
+        'Recursos e Contrarrazões: Peças fundamentadas tecnicamente para reverter desclassificações ou inabilitar concorrentes.',
+        'Derrubada de Propostas Irregulares: Identificação de falhas em fichas técnicas, homologações e planilhas de terceiros.',
+        'Representação em Tribunais de Contas: Atuação perante o TCE e TCU para garantir a lisura do certame.',
+        'Ações Judiciais: Mandados de Segurança e ações ordinárias para proteção urgente de direitos violados.',
+        'Defesa em Processos de Inidoneidade: Proteção da marca e do direito de continuar contratando com o Poder Público.'
       ]
     }
   ],
