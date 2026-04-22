@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
@@ -8,24 +8,39 @@ import Sobre from './pages/Sobre';
 import Servicos from './pages/Servicos';
 import Contato from './pages/Contato';
 import Mercado from './pages/Blog';
+import Admin from './pages/Admin';
+import AdminLogin from './pages/AdminLogin';
 import './index.css';
+
+function PublicChrome({ children }) {
+  const { pathname } = useLocation();
+  const isAdmin = pathname.startsWith('/admin');
+  if (isAdmin) return <main>{children}</main>;
+  return (
+    <>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+      <WhatsAppFloat />
+      <BackToTop />
+    </>
+  );
+}
 
 function App() {
   return (
     <Router>
-      <Header />
-      <main>
+      <PublicChrome>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/servicos" element={<Servicos />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/mercado" element={<Mercado />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
-      </main>
-      <Footer />
-      <WhatsAppFloat />
-      <BackToTop />
+      </PublicChrome>
     </Router>
   );
 }

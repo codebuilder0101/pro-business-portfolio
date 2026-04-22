@@ -1,12 +1,22 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import siteData from '../data/siteData';
 import { useAosObserver, useCounterAnimation } from '../hooks/useScrollEffects';
 import CTASection from '../components/CTASection';
+import { supabase } from '../lib/supabase';
 import heroBg from '../assets/hero-bg.jpg';
 import aboutPhoto from '../assets/photo.png';
 import portraitImg from '../assets/photo2.png';
 import blogCardImg from '../assets/logo.png';
+
+function formatDate(iso) {
+  if (!iso) return '';
+  try {
+    return new Date(iso).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+  } catch {
+    return iso;
+  }
+}
 
 function StatCounter({ target, suffix, label }) {
   const { count, ref } = useCounterAnimation(target);
@@ -22,6 +32,7 @@ function StatCounter({ target, suffix, label }) {
 export default function Home() {
   const aosRef = useAosObserver();
   const particlesRef = useRef(null);
+  const [latestPosts, setLatestPosts] = useState([]);
 
   useEffect(() => {
     const container = particlesRef.current;
@@ -41,6 +52,19 @@ export default function Home() {
   }, []);
 
   useEffect(() => { window.scrollTo(0, 0); }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const { data } = await supabase
+        .from('news')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(3);
+      if (!cancelled) setLatestPosts(data || []);
+    })();
+    return () => { cancelled = true; };
+  }, []);
 
   return (
     <div ref={aosRef}>
@@ -167,7 +191,7 @@ Fique à vontade para nos enviar uma mensagem estaremos esperando por você por 
       </section>
 
       {/* BLOG PREVIEW */}
-      {siteData.includeBlog && (
+      {siteData.includeBlog && latestPosts.length > 0 && (
         <section className="section blog-preview-section">
           <div className="container">
             <div className="section-header" data-aos="fade-up">
@@ -176,16 +200,16 @@ Fique à vontade para nos enviar uma mensagem estaremos esperando por você por 
               <p className="section-desc">Fique atualizado sobre as principais novidades, oportunidades e análises do mercado de licitações.</p>
             </div>
             <div className="blog-grid">
-              {siteData.blogPosts.slice(0, 3).map((post, i) => (
-                <article className="blog-card" data-aos="fade-up" data-aos-delay={i * 100} key={post.id}>
+              {latestPosts.map((post) => (
+                <article className="blog-card" key={post.id}>
                   <div className="blog-card-image">
                     <img src={blogCardImg} alt={post.title} style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }} />
-                    <span className="blog-category">{post.category}</span>
+                    {post.category && <span className="blog-category">{post.category}</span>}
                   </div>
                   <div className="blog-card-content">
                     <div className="blog-meta">
-                      <span><i className="far fa-calendar-alt"></i> {post.date}</span>
-                      <span><i className="far fa-clock"></i> {post.readTime}</span>
+                      <span><i className="far fa-calendar-alt"></i> {formatDate(post.created_at)}</span>
+                      {post.read_time && <span><i className="far fa-clock"></i> {post.read_time}</span>}
                     </div>
                     <h3><Link to="/mercado">{post.title}</Link></h3>
                     <p>{post.summary}</p>
