@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabase';
 import PageHero from '../components/PageHero';
 import CTASection from '../components/CTASection';
 import blogCardImg from '../assets/logo.png';
+import { useTrackPageview } from '../hooks/useAnalytics';
 
 function formatDate(iso) {
   if (!iso) return '';
@@ -21,6 +22,7 @@ export default function NewsDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
+  useTrackPageview({ articleId: id ? Number(id) : null });
   useEffect(() => { window.scrollTo(0, 0); }, [id]);
 
   useEffect(() => {
@@ -94,11 +96,9 @@ export default function NewsDetail() {
 
               {post.content && (
                 <div
-                  className="news-detail-content"
-                  style={{ fontSize: '1rem', color: '#333', lineHeight: 1.8, whiteSpace: 'pre-wrap' }}
-                >
-                  {post.content}
-                </div>
+                  className="news-detail-content prose-article"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
               )}
 
               <div style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid #eee' }}>

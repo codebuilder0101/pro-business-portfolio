@@ -135,3 +135,45 @@ values (
   'Conteúdo completo da notícia aqui.'
 )
 on conflict do nothing;
+
+-- =====================================================
+-- 5) analytics_events table
+--    One row per pageview. Duration + scroll_depth are
+--    updated when the user leaves the page.
+-- =====================================================
+create table if not exists public.analytics_events (
+  id                bigint generated always as identity primary key,
+  session_id        text not null,
+  event_type        text not null default 'pageview',
+  path              text,
+  article_id        bigint references public.news(id) on delete set null,
+  duration_seconds  int not null default 0,
+  scroll_depth      int not null default 0,
+  read_flag         boolean not null default false,
+  user_agent        text,
+  referrer          text,
+  created_at        timestamptz not null default now(),
+  updated_at        timestamptz not null default now()
+);
+
+create index if not exists idx_analytics_session   on public.analytics_events (session_id);
+create index if not exists idx_analytics_article   on public.analytics_events (article_id);
+create index if not exists idx_analytics_created   on public.analytics_events (created_at desc);
+
+drop trigger if exists analytics_touch_updated on public.analytics_events;
+create trigger analytics_touch_updated
+  before update on public.analytics_events
+  for each row execute function public.touch_updated_at();
+
+alter table public.analytics_events enable row level security;
+
+drop policy if exists "analytics_public_insert" on public.analytics_events;
+drop policy if exists "analytics_public_update" on public.analytics_events;
+drop policy if exists "analytics_public_select" on public.analytics_events;
+
+-- Anyone can insert their own pageview and update its duration/scroll.
+create policy "analytics_public_insert" on public.analytics_events for insert with check (true);
+create policy "analytics_public_update" on public.analytics_events for update using (true) with check (true);
+-- SELECT is open too so the admin dashboard can read aggregates client-side.
+-- (Aggregates are not sensitive; if you want to lock this down later, wrap reads in SECURITY DEFINER RPCs.)
+create policy "analytics_public_select" on public.analytics_events for select using (true);

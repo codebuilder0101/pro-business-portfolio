@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../hooks/useAuth';
+import RichTextEditor from '../components/RichTextEditor';
+import AnalyticsPanel from '../components/AnalyticsPanel';
 
 const EMPTY_FORM = {
   title: '',
@@ -21,6 +23,8 @@ export default function Admin() {
   const [editingId, setEditingId] = useState(null);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
+
+  const [tab, setTab] = useState('news');
 
   // Password change state
   const [showPwForm, setShowPwForm] = useState(false);
@@ -147,6 +151,15 @@ export default function Admin() {
         </div>
       </div>
 
+      <div style={styles.tabBar}>
+        <button onClick={() => setTab('news')} style={tab === 'news' ? styles.tabActive : styles.tab}>
+          <i className="fas fa-newspaper"></i> Notícias
+        </button>
+        <button onClick={() => setTab('analytics')} style={tab === 'analytics' ? styles.tabActive : styles.tab}>
+          <i className="fas fa-chart-line"></i> Estatísticas
+        </button>
+      </div>
+
       {showPwForm && (
         <div style={styles.pwCard}>
           <h2 style={styles.h2}>Alterar Senha</h2>
@@ -168,6 +181,9 @@ export default function Admin() {
         </div>
       )}
 
+      {tab === 'analytics' && <AnalyticsPanel />}
+
+      {tab === 'news' && (
       <div style={styles.grid}>
         <div style={styles.formCard}>
           <h2 style={styles.h2}>{editingId ? 'Editar Notícia' : 'Nova Notícia'}</h2>
@@ -188,7 +204,11 @@ export default function Admin() {
             <input type="text" value={form.read_time} onChange={(e) => setForm({ ...form, read_time: e.target.value })} style={styles.input} placeholder="5 min de leitura" />
 
             <label style={styles.label}>Conteúdo</label>
-            <textarea value={form.content} onChange={(e) => setForm({ ...form, content: e.target.value })} rows="8" style={styles.textarea} />
+            <RichTextEditor
+              value={form.content}
+              onChange={(html) => setForm({ ...form, content: html })}
+              placeholder="Escreva o conteúdo do artigo..."
+            />
 
             {error && <div style={styles.error}>{error}</div>}
 
@@ -235,6 +255,7 @@ export default function Admin() {
           )}
         </div>
       </div>
+      )}
     </div>
   );
 }
@@ -265,5 +286,8 @@ const styles = {
   badge: { background: 'var(--color-gold, #c8a86b)', color: '#111', padding: '2px 8px', borderRadius: 4, fontSize: '0.75rem', fontWeight: 600 },
   itemSummary: { color: '#666', fontSize: '0.85rem', lineHeight: 1.5 },
   itemActions: { display: 'flex', gap: 6, flexShrink: 0 },
-  iconBtn: { background: 'transparent', border: '1px solid #ddd', borderRadius: 6, padding: '8px 10px', cursor: 'pointer', fontSize: '0.9rem' }
+  iconBtn: { background: 'transparent', border: '1px solid #ddd', borderRadius: 6, padding: '8px 10px', cursor: 'pointer', fontSize: '0.9rem' },
+  tabBar: { display: 'flex', gap: 4, marginBottom: 20, borderBottom: '2px solid #eee' },
+  tab: { padding: '10px 18px', background: 'transparent', border: 'none', borderBottom: '2px solid transparent', marginBottom: -2, cursor: 'pointer', fontSize: '0.95rem', color: '#666', fontWeight: 500 },
+  tabActive: { padding: '10px 18px', background: 'transparent', border: 'none', borderBottom: '2px solid var(--color-gold, #c8a86b)', marginBottom: -2, cursor: 'pointer', fontSize: '0.95rem', color: '#111', fontWeight: 700 }
 };

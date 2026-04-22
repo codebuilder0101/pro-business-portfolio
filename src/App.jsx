@@ -11,11 +11,13 @@ import Mercado from './pages/Blog';
 import NewsDetail from './pages/NewsDetail';
 import Admin from './pages/Admin';
 import AdminLogin from './pages/AdminLogin';
+import { useTrackPageview } from './hooks/useAnalytics';
 import './index.css';
 
 function PublicChrome({ children }) {
   const { pathname } = useLocation();
   const isAdmin = pathname.startsWith('/admin');
+  useTrackPageview();
   if (isAdmin) return <main>{children}</main>;
   return (
     <>
