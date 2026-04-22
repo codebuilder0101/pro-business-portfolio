@@ -62,9 +62,9 @@ export default function Blog() {
   return (
     <div ref={aosRef}>
       <PageHero
-        title="Notícias do"
-        titleGold="Mercado"
-        description="Artigos, análises e novidades sobre o mercado de licitações."
+        title="Análises Estratégicas e Inteligência em Licitações"
+        titleGold=""
+        description="O mercado de licitações sob o olhar de quem conhece os bastidores. Artigos, notícias e análises técnicas para empresas que buscam vencer com segurança."
         breadcrumb="Visão do Especialista"
       />
       <section className="blog-page">
