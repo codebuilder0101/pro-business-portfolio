@@ -201,21 +201,27 @@ Fique à vontade para nos enviar uma mensagem estaremos esperando por você por 
             </div>
             <div className="blog-grid">
               {latestPosts.map((post) => (
-                <article className="blog-card" key={post.id}>
-                  <div className="blog-card-image">
-                    <img src={blogCardImg} alt={post.title} style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }} />
-                    {post.category && <span className="blog-category">{post.category}</span>}
-                  </div>
-                  <div className="blog-card-content">
-                    <div className="blog-meta">
-                      <span><i className="far fa-calendar-alt"></i> {formatDate(post.created_at)}</span>
-                      {post.read_time && <span><i className="far fa-clock"></i> {post.read_time}</span>}
+                <Link
+                  to={`/mercado/${post.id}`}
+                  key={post.id}
+                  style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer', display: 'block' }}
+                >
+                  <article className="blog-card">
+                    <div className="blog-card-image">
+                      <img src={blogCardImg} alt={post.title} style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }} />
+                      {post.category && <span className="blog-category">{post.category}</span>}
                     </div>
-                    <h3><Link to="/mercado">{post.title}</Link></h3>
-                    <p>{post.summary}</p>
-                    <Link to="/mercado" className="read-more">Ler Artigo <i className="fas fa-arrow-right"></i></Link>
-                  </div>
-                </article>
+                    <div className="blog-card-content">
+                      <div className="blog-meta">
+                        <span><i className="far fa-calendar-alt"></i> {formatDate(post.created_at)}</span>
+                        {post.read_time && <span><i className="far fa-clock"></i> {post.read_time}</span>}
+                      </div>
+                      <h3>{post.title}</h3>
+                      <p>{post.summary}</p>
+                      <span className="read-more">Ler Artigo <i className="fas fa-arrow-right"></i></span>
+                    </div>
+                  </article>
+                </Link>
               ))}
             </div>
             <div className="blog-cta" data-aos="fade-up">

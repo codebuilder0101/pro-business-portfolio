@@ -8,6 +8,7 @@ import Sobre from './pages/Sobre';
 import Servicos from './pages/Servicos';
 import Contato from './pages/Contato';
 import Mercado from './pages/Blog';
+import NewsDetail from './pages/NewsDetail';
 import Admin from './pages/Admin';
 import AdminLogin from './pages/AdminLogin';
 import './index.css';
@@ -37,6 +38,7 @@ function App() {
           <Route path="/servicos" element={<Servicos />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/mercado" element={<Mercado />} />
+          <Route path="/mercado/:id" element={<NewsDetail />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>

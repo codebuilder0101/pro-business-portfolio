@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import siteData from '../data/siteData';
 import PageHero from '../components/PageHero';
 import CTASection from '../components/CTASection';
@@ -74,20 +75,30 @@ export default function Blog() {
               {error && <p style={{ color: '#c0392b' }}>Erro ao carregar: {error}</p>}
               {!loading && !error && filtered.length === 0 && <p>Nenhuma notícia encontrada.</p>}
               {filtered.map((post) => (
-                <article className="blog-post-card" key={post.id}>
-                  <div className="blog-card-image">
-                    <img src={blogCardImg} alt={post.title} style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }} />
-                    {post.category && <span className="blog-category">{post.category}</span>}
-                  </div>
-                  <div className="blog-card-content">
-                    <div className="blog-meta">
-                      <span><i className="far fa-calendar-alt"></i> {formatDate(post.created_at)}</span>
-                      {post.read_time && <span><i className="far fa-clock"></i> {post.read_time}</span>}
+                <Link
+                  to={`/mercado/${post.id}`}
+                  key={post.id}
+                  className="blog-post-card-link"
+                  style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer', display: 'block' }}
+                >
+                  <article className="blog-post-card">
+                    <div className="blog-card-image">
+                      <img src={blogCardImg} alt={post.title} style={{ width: '100%', height: '200px', objectFit: 'cover', display: 'block' }} />
+                      {post.category && <span className="blog-category">{post.category}</span>}
                     </div>
-                    <h3>{post.title}</h3>
-                    <p>{post.summary}</p>
-                  </div>
-                </article>
+                    <div className="blog-card-content">
+                      <div className="blog-meta">
+                        <span><i className="far fa-calendar-alt"></i> {formatDate(post.created_at)}</span>
+                        {post.read_time && <span><i className="far fa-clock"></i> {post.read_time}</span>}
+                      </div>
+                      <h3>{post.title}</h3>
+                      <p>{post.summary}</p>
+                      <span className="read-more" style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                        Ler Artigo Completo <i className="fas fa-arrow-right"></i>
+                      </span>
+                    </div>
+                  </article>
+                </Link>
               ))}
             </div>
             <aside className="blog-sidebar">
