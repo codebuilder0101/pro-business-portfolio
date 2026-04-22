@@ -65,7 +65,7 @@ export default function Blog() {
         title="Notícias do"
         titleGold="Mercado"
         description="Artigos, análises e novidades sobre o mercado de licitações."
-        breadcrumb="Mercado"
+        breadcrumb="Visão do Especialista"
       />
       <section className="blog-page">
         <div className="container">

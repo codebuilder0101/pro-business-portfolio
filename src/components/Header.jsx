@@ -13,7 +13,7 @@ export default function Header() {
     { to: '/', label: 'Início' },
     { to: '/sobre', label: 'Sobre Nós' },
     { to: '/servicos', label: 'Serviços' },
-    ...(siteData.includeBlog ? [{ to: '/mercado', label: 'Mercado' }] : []),
+    ...(siteData.includeBlog ? [{ to: '/mercado', label: 'Visão do Especialista' }] : []),
     { to: '/contato', label: 'Contato' },
   ];
 
