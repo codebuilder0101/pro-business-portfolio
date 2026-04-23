@@ -32,7 +32,8 @@ export default function Footer() {
               <li><Link to="/">Início</Link></li>
               <li><Link to="/sobre">Sobre Nós</Link></li>
               <li><Link to="/servicos">Serviços</Link></li>
-              {siteData.includeBlog && <li><Link to="/mercado">Mercado</Link></li>}
+              {siteData.includeBlog && <li><Link to="/mercado">
+Visão do Especialista</Link></li>}
               <li><Link to="/contato">Contato</Link></li>
             </ul>
           </div>
