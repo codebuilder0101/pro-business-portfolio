@@ -21,7 +21,7 @@ export default function Footer() {
               Consultoria especializada em {siteData.specialization}. Transforme o Governo no maior cliente da sua empresa com segurança, previsibilidade e garantia de pagamento.
             </p>
             <div className="footer-social">
-              <a href="https://www.instagram.com/@ebracklicitacoes" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.instagram.com/ebracklicitacoes" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
               <a href="https://www.linkedin.com/in/elcio-brack" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
               <a href="https://www.facebook.com/elcio.brack" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
             </div>

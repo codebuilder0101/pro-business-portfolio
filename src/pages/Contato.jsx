@@ -142,7 +142,7 @@ export default function Contato() {
         <div className="map-placeholder">
           <i className="fas fa-map-marker-alt"></i>
           <p>{siteData.address} - {siteData.cityState}</p>
-          <p style={{ fontSize: '0.85rem' }}>Para adicionar o Google Maps, substitua este bloco por um iframe do Google Maps.</p>
+          <p style={{ fontSize: '0.85rem' }}>Atendemos empresas de todo o Brasil de forma 100% digital, garantindo agilidade e suporte em tempo real. Para reuniões estratégicas presenciais, nossa equipe se desloca até a sede da sua empresa, conforme a necessidade.</p>
         </div>
       </section>
     </div>

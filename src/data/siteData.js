@@ -1,9 +1,9 @@
 const siteData = {
   firmName: 'Elcio Brack',
   specialization: 'Licitações',
-  whatsappNumber: '+54996134928',
+  whatsappNumber: '+5554996134928',
   email: 'ebrackassessoria@gmail.com',
-  phone: '+54996134928',
+  phone: '+5554996134928',
   address: 'Website',
   cityState: 'Website',
   oabNumber: 'Website',
@@ -13,8 +13,8 @@ const siteData = {
   tagline: 'O Maior Comprador do Brasil',
   colorScheme: 'dark-gold',
   includeBlog: true,
-  whatsappLink: (msg = 'Olá! Gostaria de mais informações sobre os serviços jurídicos.') =>
-    `https://wa.me/+54996134928?text=${encodeURIComponent(msg)}`,
+  whatsappLink: (msg = 'Olá! Gostaria de mais informações sobre os serviços de licitações.') =>
+    `https://wa.me/5554996134928?text=${encodeURIComponent(msg)}`,
   services: [
     {
       icon: 'fas fa-file-contract',
