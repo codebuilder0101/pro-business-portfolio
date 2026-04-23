@@ -194,10 +194,10 @@ Fique à vontade para nos enviar uma mensagem estaremos esperando por você por 
       {siteData.includeBlog && latestPosts.length > 0 && (
         <section className="section blog-preview-section">
           <div className="container">
-            <div className="section-header" data-aos="fade-up">
-              <span className="section-tag">Mercado</span>
-              <h2 className="section-title">Notícias do <span className="text-gold">Mercado</span></h2>
-              <p className="section-desc">Fique atualizado sobre as principais novidades, oportunidades e análises do mercado de licitações.</p>
+            <div className="section-header">
+              <span className="section-tag">Visão do Especialista</span>
+              <h2 className="section-title">Análises <span className="text-gold">Estratégicas</span></h2>
+              <p className="section-desc">O mercado de licitações sob o olhar de quem conhece os bastidores. Artigos, notícias e análises técnicas para empresas que buscam vencer com segurança.</p>
             </div>
             <div className="blog-grid">
               {latestPosts.map((post) => (
@@ -224,8 +224,8 @@ Fique à vontade para nos enviar uma mensagem estaremos esperando por você por 
                 </Link>
               ))}
             </div>
-            <div className="blog-cta" data-aos="fade-up">
-              <Link to="/mercado" className="btn btn-outline">Ver Todas as Notícias <i className="fas fa-arrow-right"></i></Link>
+            <div className="blog-cta">
+              <Link to="/mercado" className="btn btn-outline">Ver Todas as Análises <i className="fas fa-arrow-right"></i></Link>
             </div>
           </div>
         </section>
