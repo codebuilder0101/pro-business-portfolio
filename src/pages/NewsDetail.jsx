@@ -74,9 +74,6 @@ export default function NewsDetail() {
                   alt={post.title}
                   style={{ width: '100%', maxHeight: 420, objectFit: 'cover', display: 'block', borderRadius: 'var(--radius-lg)' }}
                 />
-                {post.category && (
-                  <span className="blog-category" style={{ position: 'absolute', top: 20, left: 20 }}>{post.category}</span>
-                )}
               </div>
 
               <div className="blog-meta" style={{ marginTop: 24 }}>
