@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import siteData from '../data/siteData';
 import PageHero from '../components/PageHero';
 import { useAosObserver } from '../hooks/useScrollEffects';
+import { trackConversion } from '../lib/gtag';
 
 export default function Contato() {
   const aosRef = useAosObserver();
@@ -15,6 +16,8 @@ export default function Contato() {
     e.preventDefault();
     setSending(true);
     setStatus({ type: '', message: '' });
+
+    const txId = `lead-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 
     try {
       const res = await fetch('/api/contact', {
@@ -31,6 +34,7 @@ export default function Contato() {
       const data = await res.json();
 
       if (data.success) {
+        trackConversion(txId);
         setStatus({ type: 'success', message: data.message });
         setForm({ name: '', email: '', phone: '', subject: '', message: '' });
         // Also open WhatsApp
@@ -41,6 +45,7 @@ export default function Contato() {
       }
     } catch {
       // Fallback to WhatsApp only if API is unavailable
+      trackConversion(txId);
       const msg = `Olá! Meu nome é ${form.name}.\nAssunto: ${form.subject}\nTelefone: ${form.phone}\nE-mail: ${form.email}\n\n${form.message}`;
       window.open(siteData.whatsappLink(msg), '_blank');
       setStatus({ type: 'success', message: 'Redirecionado para o WhatsApp.' });
