@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -14,6 +14,7 @@ import Admin from './pages/Admin';
 import AdminLogin from './pages/AdminLogin';
 import { useTrackPageview } from './hooks/useAnalytics';
 import { trackConversion } from './lib/gtag';
+import { trackPageView, trackLead } from './lib/fbpixel';
 import './index.css';
 
 function useWhatsAppConversionTracking() {
@@ -21,11 +22,26 @@ function useWhatsAppConversionTracking() {
     const onClick = (e) => {
       const link = e.target.closest && e.target.closest('a[href*="wa.me"]');
       if (!link) return;
-      trackConversion(`wa-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`);
+      const id = `wa-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      trackConversion(id);
+      trackLead(id);
     };
     document.addEventListener('click', onClick);
     return () => document.removeEventListener('click', onClick);
   }, []);
+}
+
+function useMetaPixelPageview(pathname) {
+  // The inline Meta Pixel snippet in index.html already fires PageView on the
+  // initial load, so skip the first run and only track subsequent SPA route changes.
+  const isInitialLoad = useRef(true);
+  useEffect(() => {
+    if (isInitialLoad.current) {
+      isInitialLoad.current = false;
+      return;
+    }
+    trackPageView();
+  }, [pathname]);
 }
 
 function PublicChrome({ children }) {
@@ -33,6 +49,7 @@ function PublicChrome({ children }) {
   const isAdmin = pathname.startsWith('/admin');
   useTrackPageview();
   useWhatsAppConversionTracking();
+  useMetaPixelPageview(pathname);
   if (isAdmin) return <main>{children}</main>;
   return (
     <>
